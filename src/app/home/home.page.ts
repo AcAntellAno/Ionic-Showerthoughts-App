@@ -19,7 +19,7 @@ export class HomePage {
     });
   }
 
-  gotToDetail() {
-    this.router.navigate(['/detail']);
-  }
+  // gotToDetail() {
+  //   this.router.navigate(['/detail']);
+  // }
 }
