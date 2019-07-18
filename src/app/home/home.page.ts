@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
+import { Response } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +9,27 @@ import { ApiService } from '../api.service';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  posts;
-  constructor(private apiService: ApiService) {}
+  posts: object[] = [];
+  // posts;
+  // articles;
+  constructor(private router: Router, private apiService: ApiService) {}
+  // constructor(private apiService: ApiService) {}
 
-  ionViewDidEnter() {
-    this.apiService.getPosts().subscribe(data => {
-      console.log(data);
-      this.posts = data['posts'];
+  ngOnInit() {
+    this.apiService.getPosts().subscribe((Response: any) => {
+      // console.log(Response.data.children);
+      this.posts = Response.data.children;
     });
   }
+
+  gotToDetail() {
+    this.router.navigate(['/detail']);
+  }
+  // ionViewDidEnter() {
+  //   this.apiService.getPosts().subscribe(data => {
+  //     console.log(data);
+  //     this.posts = data['posts'];
+  //     // this.articles = data['articles'];
+  //   });
+  // }
 }

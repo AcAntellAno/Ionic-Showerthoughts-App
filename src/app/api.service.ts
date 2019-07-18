@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  API_KEY = '922dd7a3ad534c4799afd52d974b02bb';
-
   constructor(private httpClient: HttpClient) {}
 
-  getPosts() {
+  getPosts(): Observable<any> {
     return this.httpClient.get(
-      `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${
-        this.API_KEY
-      }`
+      'https://www.reddit.com/r/Showerthoughts/new.json?sort=new'
     );
   }
 }
