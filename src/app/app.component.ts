@@ -14,6 +14,11 @@ export class AppComponent {
       title: 'Home',
       url: '/home',
       icon: 'home'
+    },
+    {
+      title: 'About',
+      url: '/about',
+      icon: 'help-circle-outline'
     }
   ];
 
