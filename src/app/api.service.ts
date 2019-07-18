@@ -10,7 +10,7 @@ export class ApiService {
 
   getPosts(): Observable<any> {
     return this.httpClient.get(
-      'https://www.reddit.com/r/Showerthoughts/new.json?sort=new'
+      'https://www.reddit.com/r/Showerthoughts/top.json?sort=new'
     );
   }
 }

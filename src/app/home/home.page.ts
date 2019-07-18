@@ -10,10 +10,7 @@ import { Response } from 'selenium-webdriver/http';
 })
 export class HomePage {
   posts: object[] = [];
-  // posts;
-  // articles;
   constructor(private router: Router, private apiService: ApiService) {}
-  // constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.apiService.getPosts().subscribe((Response: any) => {
@@ -25,11 +22,4 @@ export class HomePage {
   gotToDetail() {
     this.router.navigate(['/detail']);
   }
-  // ionViewDidEnter() {
-  //   this.apiService.getPosts().subscribe(data => {
-  //     console.log(data);
-  //     this.posts = data['posts'];
-  //     // this.articles = data['articles'];
-  //   });
-  // }
 }
