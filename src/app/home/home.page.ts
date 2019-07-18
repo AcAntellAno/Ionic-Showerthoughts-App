@@ -18,8 +18,4 @@ export class HomePage {
       this.posts = Response.data.children;
     });
   }
-
-  // gotToDetail() {
-  //   this.router.navigate(['/detail']);
-  // }
 }

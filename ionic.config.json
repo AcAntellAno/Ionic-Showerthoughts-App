@@ -1,5 +1,7 @@
 {
   "name": "showerthoughts-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
